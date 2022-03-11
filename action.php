@@ -11,36 +11,31 @@ $dbname = "test_app";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
-
-
-
-
 
 
 if ($_POST) {
- $length =  $_POST['length'];
- $width =  $_POST['width'];
- $depth =  $_POST['depth'];
- $quantity =  $_POST['quantity'];
- $priceTotal =  $_POST['priceTotal'];
+    $length = $_POST['length'];
+    $width = $_POST['width'];
+    $depth = $_POST['depth'];
+    $quantity = $_POST['quantity'];
+    $priceTotal = $_POST['priceTotal'];
 
 
-$sql = "INSERT INTO Orders (length, width, depth, quantity, priceTotal) 
+    $sql = "INSERT INTO Orders (length, width, depth, quantity, priceTotal) 
 VALUES ($length , $width ,$depth ,$quantity , $priceTotal)";
 
-if (mysqli_query($conn, $sql)) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    if (mysqli_query($conn, $sql)) {
+        echo "Your Order Has Been Created";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+
+
 }
-
-mysqli_close($conn);
-
-
-}
-
 
 
 ?>
