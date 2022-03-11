@@ -1,0 +1,11 @@
+{
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "friendsofphp/php-cs-fixer": "^3.7",
+        "phing/phing": "^2.17"
+    }
+}
